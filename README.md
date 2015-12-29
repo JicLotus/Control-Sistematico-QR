@@ -1,29 +1,36 @@
 # Registro y control sistemático de stock de bobinas de papel
 
-# Objetivo
+### Objetivo
 El proyecto surge con el objetivo de resolver la problemática del control de bobinas de una papelera recicladora, CelulosaBaradero S.A. El proyecto se desarrollará a medida de la empresa
 
-Requerimientos Funcionales
+### Requerimientos Funcionales
+
 Introducción:
 La papelera de reciclaje cuenta con tres plantas recicladoras:
+
 1. La primer planta recicladora se encuentra situada en Caseros y será la que recibirá la materia prima a reciclar. La misma se encargará de compactarla y luego de enviarla a la siguiente planta.
+
 2. Esta planta se encuentra situada en Baradero y la misma se encarga de procesar la materia prima para sacar las bobinas de papel. Luego esas bobinas podrán quedarse como stock en esta planta, ser vendidas directamente a un cliente o ser despachadas a la tercer planta recicladora para que queden como stock allí.
 Proyecto de Trabajo Profesional
 2
+
 3. Esta planta también se ubica en Caseros y recibe bobinas de papel proveniente de la planta de Baradero. Las mismas pueden quedar como stock y luego ser vendidas directamente a un cliente o también desarrollar papel higiénico.
 Nuestro sistema a plantear se situará en las plantas 2 y 3. Primeramente se pondrán 2 servidores en paralelo. Uno se lo instalara en la planta 2 y el otro en la 3 ya que los registros de la planta 2 son independientes de la planta 3. Esta forma de almacenar los datos se planteo por el hecho de que la planta de Baradero sufre frecuentes cortes de internet y si no se hiciera de esta manera seria imposible el trabajo continuo.
 En la planta 2 se ubicará el Sistema de formulario para obreros el cual es el principal y único ingreso de bobinas al sistema. La forma que se ingresaran las bobinas a la planta 3 será mediante la Aplicación de celular para el escaneo y control de las bobinas.
 Para el control de las bases de datos se armará un Sistema administrador para corroborar el stock de bobinas el cual estará instalado tanto en la planta 2 como en la 3. Desde el mismo se puede acceder a cualquier base de datos de los 2 servidores existentes.
-Las principales funcionalidades serian:
+
+####Las principales funcionalidades serian:
+
 1. Sistema de formulario para los obreros
 El obrero de turno primeramente deberá elegir su nombre para ingresar al formulario. Cuando las bobinas estén listas para ser pesadas, el sistema comienza captando el peso de la balanza y se lo plasmaría en el formulario.
 Una vez que el obrero ingrese los datos respectivos de la bobina (Gramaje,Formato,Material,Espesor y Cliente ) que se acaba de pesar, ingresará la bobina al stock y saldrá impreso un rotulo con los datos de dicha bobina, este rotulo se pondrá por debajo del cobertor de la bobina que acaba de salir.
 El rotulo impreso además de contener los datos de la bobina respectiva también contendría un código QR que avalaría estos datos y el mismo será útil en la etapa de escaneo con el celular.
-La comunicación entre el formulario y la balanza será a través de un puerto RS232. Se deberán averiguar los datos en el fabricante de balanza para saber la frecuencia y la secuencia de bytes a recibir para ser captadas correctamente.
-También algo a tener en cuenta para implementar es el hecho de que la planta en donde se cargan las bobinas se encuentra en Baradero y al ser un lugar aislado de la ciudad sufre
+La comunicación entre el formulario y la balanza será a través de un puerto RS2
+32. Se deberán averiguar los datos en el fabricante de balanza para saber la frecuencia y la secuencia de bytes a recibir para ser captadas correctamente. También algo a tener en cuenta para implementar es el hecho de que la planta en donde se cargan las bobinas se encuentra en Baradero y al ser un lugar aislado de la ciudad sufre
 Proyecto de Trabajo Profesional
 3
 frecuentes cortes de luz y por las largas distancias de la planta suele ser frecuente la caída de señal del router. Por lo tanto para afrontar esta problemática se planteo un modelo en el cual los datos se copien en 2 lugares distintos en la computadora. Una copia se hará en el disco principal y otra en un USB. Para seguir trabajando por más que no haya conexión con la base de datos, se harán copias de las consultas que debían haberse realizado(a las direcciones de disco principal y usb).
+
 2. Aplicación de celular para el escaneo y control de las bobinas
 El obrero debe ingresar su usuario en la aplicación. Cuando este ingresado en el sistema aparecerán las siguientes opciones:
 a. Cargar códigos al teléfono
@@ -40,6 +47,7 @@ e. Descargar códigos leídos
 Proyecto de Trabajo Profesional
 4
 ÎõÎé Los códigos no se descargan a medida que se escanea por la problemática descripta en el punto 1). Se deben descargar todos juntos.
+
 3. Sistema administrador para corroborar el stock de bobinas
 Al igual que la aplicación del celular el administrador de stock tendrá un loguin en el que pedirá usuario y contraseña. El sistema administrador tendrá las principales categorías:
 a. Vista
