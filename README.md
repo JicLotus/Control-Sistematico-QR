@@ -1,10 +1,14 @@
 # Registro y control sistemático de stock de bobinas de papel
 
+#### Autor
+
+Jose Ignacio Castelli
+
 #### Objetivo
 El proyecto surge con el objetivo de resolver la problemática del control de bobinas de una papelera recicladora, CelulosaBaradero S.A. El proyecto se desarrollará a medida de la empresa
 
 
-#### Introducción:
+#### Introducción
 La papelera de reciclaje cuenta con tres plantas recicladoras:
 
 1. La primer planta recicladora se encuentra situada en Caseros y será la que recibirá la materia prima a reciclar. La misma se encargará de compactarla y luego de enviarla a la siguiente planta.
