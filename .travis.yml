@@ -1,3 +1,2 @@
 language: csharp
-solution: ./ControlSistematicoBobinas/ControlSistematicoBobinas.sln
-script:
+solution: ./Tests/Tests.csproj
