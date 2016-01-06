@@ -16,7 +16,7 @@ namespace ControlSistematicoBobinas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ControlSistematicoBobinas.Formularios.PanelInicial());
+            Application.Run(new ControlSistematicoBobinas.Formularios.FormularioOperador());
         }
     }
 }
