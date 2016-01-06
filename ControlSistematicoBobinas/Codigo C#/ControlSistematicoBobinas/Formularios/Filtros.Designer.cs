@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Filtros));
             this.cmbMaquinista = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.mskPorciento = new System.Windows.Forms.MaskedTextBox();
@@ -484,6 +485,7 @@
             this.Controls.Add(this.frmEstado);
             this.Controls.Add(this.frmOpciones);
             this.Controls.Add(this.frmPaginas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Filtros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtros";

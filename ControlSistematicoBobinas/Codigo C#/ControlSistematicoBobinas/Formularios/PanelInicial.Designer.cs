@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelInicial));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSrv = new System.Windows.Forms.ComboBox();
             this.btOperador = new System.Windows.Forms.Button();
@@ -83,7 +84,9 @@
             this.Controls.Add(this.cmbSrv);
             this.Controls.Add(this.btOperador);
             this.Controls.Add(this.BtAdmin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PanelInicial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.PanelInicial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
