@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnIngresarBobina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Listar"
+        android:onClick="EnviarOnClik"
+        android:text="Cargar codigos al telefono" />
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="obtenerHistorial"
+        android:text="Historial" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="listadoOnClick"
+        android:text="Analizar codigo" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="ingresarBobina"
+        android:text="Ingresar Bobina" />
+
+	<Button
+	    android:id="@+id/button3"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="40dp"
+	    android:onClick="leerFichero"
+	    android:text="Descargar codigos leidos" />
+
+</LinearLayout>
