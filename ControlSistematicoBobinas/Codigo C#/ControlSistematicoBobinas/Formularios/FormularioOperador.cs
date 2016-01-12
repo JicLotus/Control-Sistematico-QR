@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using LibControlSistematico;
+
 namespace ControlSistematicoBobinas.Formularios
 {
     public partial class FormularioOperador : Form
@@ -15,6 +17,11 @@ namespace ControlSistematicoBobinas.Formularios
         public FormularioOperador()
         {
             InitializeComponent();
+        }
+
+        private void FormularioOperador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

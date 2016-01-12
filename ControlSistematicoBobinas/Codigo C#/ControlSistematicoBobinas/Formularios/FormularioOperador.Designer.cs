@@ -585,6 +585,7 @@
             this.Name = "FormularioOperador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormularioOperador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.grpDatos.ResumeLayout(false);

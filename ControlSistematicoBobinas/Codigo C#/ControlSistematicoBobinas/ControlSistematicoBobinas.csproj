@@ -158,6 +158,12 @@
     <Content Include="Recursos\stockMaster.png" />
     <Content Include="Recursos\synaptic.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibControlSistematico\LibControlSistematico.csproj">
+      <Project>{11ec0d90-4b79-4de6-8eda-799b779a9a9c}</Project>
+      <Name>LibControlSistematico</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

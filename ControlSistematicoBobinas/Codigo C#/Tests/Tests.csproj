@@ -50,10 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseDeDatos\TestConexion.cs" />
+    <Compile Include="BaseDeDatos\TestConsultasSQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelojBobina\PruebaRelojBobina.cs" />
+    <Compile Include="Turnos\PruebaTurnos.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BaseDeDatos\" />
+    <ProjectReference Include="..\LibControlSistematico\LibControlSistematico.csproj">
+      <Project>{11ec0d90-4b79-4de6-8eda-799b779a9a9c}</Project>
+      <Name>LibControlSistematico</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
