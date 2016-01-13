@@ -1,36 +1,70 @@
 package com.example.controlsistematicoqr;
 
-import android.support.v7.app.ActionBarActivity;
+
+import java.io.IOException;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
+import com.Recursos.clientes;
+import com.Recursos.lectorArchivos;
+import com.Recursos.maquinistas;
+import com.Recursos.productos;
+import com.example.controlsistematicoqr.R;
+import com.parceleable.ParcelableObject;
+
 import android.os.Bundle;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.telephony.TelephonyManager;
+import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+	
+	private String nombreUsuario;
+	public Activity actividad;
+	public String ipPuerto;
+	public String privilegio;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
 
+	}
+	
+	public void listadoOnClick(View view){
+		
+	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+	public void ingresarBobina(View view)
+	{
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+	}
+	
+	public void obtenerHistorial(View view){
+
+	}
+	
+	
+	public void EnviarOnClik(View view) {
+
+	}
+
+	public void leerFichero(View view)
+	{
+		
+	}
+	
+
 }

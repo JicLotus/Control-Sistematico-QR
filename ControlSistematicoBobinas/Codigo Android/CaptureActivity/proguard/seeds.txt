@@ -1,0 +1,23 @@
+com.google.zxing.client.android.CaptureActivity
+com.google.zxing.client.android.CaptureActivity: CaptureActivity()
+com.google.zxing.client.android.HelpActivity
+com.google.zxing.client.android.HelpActivity: HelpActivity()
+com.google.zxing.client.android.PreferencesActivity
+com.google.zxing.client.android.PreferencesActivity: PreferencesActivity()
+com.google.zxing.client.android.ViewfinderView
+com.google.zxing.client.android.ViewfinderView: ViewfinderView(android.content.Context,android.util.AttributeSet)
+com.google.zxing.client.android.book.SearchBookContentsActivity
+com.google.zxing.client.android.book.SearchBookContentsActivity: SearchBookContentsActivity()
+com.google.zxing.client.android.book.SearchBookContentsListItem
+com.google.zxing.client.android.book.SearchBookContentsListItem: SearchBookContentsListItem(android.content.Context)
+com.google.zxing.client.android.book.SearchBookContentsListItem: SearchBookContentsListItem(android.content.Context,android.util.AttributeSet)
+com.google.zxing.client.android.encode.EncodeActivity
+com.google.zxing.client.android.encode.EncodeActivity: EncodeActivity()
+com.google.zxing.client.android.history.HistoryActivity
+com.google.zxing.client.android.history.HistoryActivity: HistoryActivity()
+com.google.zxing.client.android.share.AppPickerActivity
+com.google.zxing.client.android.share.AppPickerActivity: AppPickerActivity()
+com.google.zxing.client.android.share.BookmarkPickerActivity
+com.google.zxing.client.android.share.BookmarkPickerActivity: BookmarkPickerActivity()
+com.google.zxing.client.android.share.ShareActivity
+com.google.zxing.client.android.share.ShareActivity: ShareActivity()
