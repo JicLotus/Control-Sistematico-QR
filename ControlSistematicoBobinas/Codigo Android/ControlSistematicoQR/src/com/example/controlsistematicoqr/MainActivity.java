@@ -11,6 +11,7 @@ import com.Recursos.lectorArchivos;
 import com.Recursos.maquinistas;
 import com.Recursos.productos;
 import com.example.controlsistematicoqr.R;
+import com.example.controlsistematicoqr.ListadoActivity;
 import com.parceleable.ParcelableObject;
 
 import android.os.Bundle;
@@ -39,12 +40,10 @@ public class MainActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-
 	}
 	
 	public void listadoOnClick(View view){
-		
+		startActivity(new Intent(this, ListadoActivity.class));
 	}
 
 	public void ingresarBobina(View view)
@@ -58,7 +57,12 @@ public class MainActivity extends Activity {
 	
 	
 	public void EnviarOnClik(View view) {
-
+		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+		intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+		intent.putExtra("CARGAR_CODIGO","SI");
+		intent.putExtra("NOMBRE_USUARIO", "jose");//nombreUsuario);
+		intent.putExtra("IPPUERTO",ipPuerto);
+		startActivityForResult(intent, 0);
 	}
 
 	public void leerFichero(View view)

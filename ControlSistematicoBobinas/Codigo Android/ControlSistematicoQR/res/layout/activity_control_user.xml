@@ -5,46 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".ControlUser" >
 
-    <TextView
-        android:id="@+id/textView1"
+    
+     <EditText
+        android:id="@+id/txtFormato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:text="Usuario:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Contraseña"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName" />
+    
     <EditText
         android:id="@+id/txtNroBobina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView01"
+        android:layout_below="@id/txtFormato"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:ems="10"
+        android:hint="Contraseña"
         android:inputType="textPassword" >
 
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/txtFormato"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtNroBobina"
-        android:layout_below="@+id/textView1"
-        android:ems="10"
-        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnIngresarBobina"
@@ -53,9 +37,13 @@
         android:layout_below="@+id/txtNroBobina"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="68dp"
+        android:background="#00f"
+        android:minHeight="50dip"
         android:onClick="clickIngresar"
         android:text="Ingresar"
-        android:width="320dp" />
+        android:textColor="#fff"
+        android:width="320dp"
+        android:textSize="25dp" />
 
     <Spinner
         android:id="@+id/spMaquinistas"
@@ -64,4 +52,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
 
+    
 </RelativeLayout>

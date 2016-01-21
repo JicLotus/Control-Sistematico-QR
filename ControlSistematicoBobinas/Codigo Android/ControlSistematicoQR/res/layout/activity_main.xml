@@ -8,9 +8,13 @@
         android:id="@+id/btnIngresarBobina"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#00f"
         android:hint="Listar"
         android:onClick="EnviarOnClik"
-        android:text="Cargar codigos al telefono" />
+        android:text="Cargar codigos al telefono"
+        android:textColor="#fff"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/Button02"
@@ -18,7 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:onClick="obtenerHistorial"
-        android:text="Historial" />
+        android:text="Historial"
+        android:background="#00f"
+		android:textColor="#fff"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/button2"
@@ -26,7 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:onClick="listadoOnClick"
-        android:text="Analizar codigo" />
+        android:text="Analizar codigo"
+        android:background="#00f"
+		android:textColor="#fff"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/button4"
@@ -34,7 +44,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:onClick="ingresarBobina"
-        android:text="Ingresar Bobina" />
+        android:text="Ingresar Bobina"
+        android:background="#00f"
+		android:textColor="#fff"
+        android:textSize="25dp" />
 
 	<Button
 	    android:id="@+id/button3"
@@ -42,6 +55,9 @@
 	    android:layout_height="wrap_content"
 	    android:layout_marginTop="40dp"
 	    android:onClick="leerFichero"
-	    android:text="Descargar codigos leidos" />
+	    android:text="Descargar codigos leidos"
+	    android:background="#00f"
+		android:textColor="#fff"
+        android:textSize="25dp" />
 
 </LinearLayout>

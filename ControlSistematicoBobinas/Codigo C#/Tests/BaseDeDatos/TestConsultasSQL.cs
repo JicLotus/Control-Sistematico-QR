@@ -13,18 +13,21 @@ namespace Tests.BaseDeDatos
     [TestClass]
     public class TestConsultasSQL
     {
-        ConectorDB conector;
-        GeneradorDeConsultas generadorConsultas;
-        String consulta;
-        String nombre = "jose", contrasenia = "123", privilegio = "1";
+        HacedorDeConsultas consultador;
 
-        public TestConsultasSQL()
+
+        [TestInitialize]
+        public void Init()
         {
-            conector = new ConectorDB("localhost", "testDB", "root", "", "3306", "1");
-
-            int registrosPorHoja=30;
-            generadorConsultas = new GeneradorDeConsultas(registrosPorHoja);
+            consultador = new HacedorDeConsultas("localhost", "3306", "1","lectorcodigo");
         }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+        
+        }
+
 
         private TestContext testContextInstance;
 
@@ -44,24 +47,16 @@ namespace Tests.BaseDeDatos
             }
         }
 
+
+
         [TestMethod]
         public void agregarUsuarioALaBaseDeDatos()
         {
-            conector.OpenConnection();
+            consultador.newUsuario("desodorante", "123", "1");
 
-            consulta = generadorConsultas.agregarUsuario(nombre,contrasenia,privilegio);
-
-            String asd = "INSERT INTO  `testDB`.`usuarios` (`id` ,`Nombre` ,`Password` ,`Privilegio`)VALUES (NULL ,  '" + nombre + "',  '" + contrasenia + "',  '" + privilegio + "');";
-            conector.HacerConsulta(asd);
-
-            conector.CloseConnection();
+            consultador.getUsers();
         }
 
-        [TestMethod]
-        public void eliminarUsuarioALaBaseDeDatos()
-        {
-            
-        }
 
     }
 }
