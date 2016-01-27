@@ -48,9 +48,11 @@
     <Compile Include="MotorBaseDeDatos\ConectorDB.cs" />
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasClientes.cs" />
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasMaquinistas.cs" />
+    <Compile Include="MotorBaseDeDatos\Consultas\ConsultasObservacionesGenerales.cs" />
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasProductos.cs" />
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasUsuarios.cs" />
-    <Compile Include="MotorBaseDeDatos\Consultas\GeneradorDeConsultas.cs" />
+    <Compile Include="MotorBaseDeDatos\Consultas\ConsultasBobinas.cs" />
+    <Compile Include="MotorBaseDeDatos\Consultas\ConsultasHistorialCelular.cs" />
     <Compile Include="MotorBaseDeDatos\HacedorDeConsultas.cs" />
     <Compile Include="MotorBaseDeDatos\IntermediarioConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
