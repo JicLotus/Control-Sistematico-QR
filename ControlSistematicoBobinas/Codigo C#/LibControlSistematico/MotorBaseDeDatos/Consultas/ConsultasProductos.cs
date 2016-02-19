@@ -42,7 +42,7 @@ namespace LibControlSistematico
 
         public string agregarProducto(string tipo, string metros)
         {
-            return ("insert into lectorcodigo.productos (`Index`,`Tipo`,`Metros`) values(NULL, '" + tipo + "','" + metros + "')");
+            return ("insert into "  + baseDeDatos +  ".productos (`Index`,`Tipo`,`Metros`) values(NULL, '" + tipo + "','" + metros + "')");
         }
 
         public string updateProducto(string tipo, string metros, string id)
@@ -98,9 +98,11 @@ namespace LibControlSistematico
         }
 
 
+
         public string getIndiceNombre(string nombre)
         {
-            return "Select id from productos where nombre='" + nombre + "' limit 1";
+            return "Select productos.index from productos where productos.tipo='" + nombre + "' limit 1";
         }
+
     }
 }

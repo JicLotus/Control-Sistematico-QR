@@ -26,25 +26,22 @@ Para el control de las bases de datos se armará un Sistema administrador para co
 
 ###### Cliente:
 
-El cliente será Desktop y se desarrollara para el SO Windows.
+Cliente desktop y se desarrollado para el SO Windows.
+
+Se utilizo Visual Studio 2012 con licencia de estudiante para la creacion de la .dll, unit testing y el proyecto que contiene los formularios.
 
 ###### Servidor:
 
-Sera un servidor web, Apache utilizando MYSQL para el manejo de base de datos. Puede ser ejecutado desde Linux o Windows. Preferentemente y por cuestiones optimas, el servidor es mejor que este corriendo bajo un SO de Linux. Se utilizara Ubuntu Server como SO ya que es gratuito y con buen funcionamiento.
+Servidor web, Apache utilizando MYSQL para el manejo de base de datos. Puede ser ejecutado desde Linux o Windows. Preferentemente y por cuestiones optimas, el servidor es mejor que este corriendo bajo un SO de Linux. Se utilizara Ubuntu Server como SO ya que es gratuito y con buen funcionamiento.
 
 
 ###### Aplicación celular:
 
-Sera desarrollado para el SO Android.
+Desarrollado en android. Se utilizo el IDE eclipse para windows.
 
 
 #### Documentacion
 
-La documentacion esta desarrollada en Sphinx
+La documentacion esta desarrollada en Sphinx.
 
-#### Test
-
-
-
-
-## Instalacion
+ Para compilarla y utilizarla simplemente ubicarse en el directorio de la documentacion y escribir make 'html' si se quiere compilar en formato web.

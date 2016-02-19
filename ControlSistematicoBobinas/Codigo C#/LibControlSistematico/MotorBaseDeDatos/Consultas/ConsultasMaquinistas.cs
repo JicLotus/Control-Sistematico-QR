@@ -30,13 +30,13 @@ namespace LibControlSistematico
 
         public string agregarMaquinista(string maquinista, string ayudante)
         {
-            return ("insert into lectorcodigo.maquinista (`Index`,`Maquinista`,`Ayudante`) values(NULL, '" + maquinista + "','" + ayudante + "')");
+            return ("insert into `" + baseDeDatos + "`.`maquinista` (`Index`,`Maquinista`,`Ayudante`) values(NULL, '" + maquinista + "','" + ayudante + "')");
         }
 
 
         public string updateMaquinista(string maquinista, string ayudante, string id)
         {
-            return ("UPDATE lectorcodigo.maquinista set maquinista ='" + maquinista + "' , ayudante = '" + ayudante + "' where maquinista.index =" + id + " limit 1");
+            return ("UPDATE `" + baseDeDatos + "`.`maquinista` set maquinista ='" + maquinista + "' , ayudante = '" + ayudante + "' where maquinista.index =" + id + " limit 1");
         }
 
         public string cargaMaquinistasCompleto()
@@ -75,5 +75,10 @@ namespace LibControlSistematico
             return ("Select * from maquinista limit " + hoja_inicial + "," + limite + ";");
         }
 
+
+        public string getIndiceNombre(string nombre)
+        {
+            return "Select maquinista.index from maquinista where maquinista.maquinista='" + nombre + "' limit 1";
+        }
     }
 }

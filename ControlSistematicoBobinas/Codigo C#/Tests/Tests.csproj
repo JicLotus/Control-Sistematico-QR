@@ -55,7 +55,6 @@
     <Compile Include="BaseDeDatos\TestConsultasProductos.cs" />
     <Compile Include="BaseDeDatos\TestConsultasUsuarios.cs" />
     <Compile Include="BaseDeDatos\TestConsultasBobinas.cs" />
-    <Compile Include="BaseDeDatos\TestConsultasHistorialCelular.cs" />
     <Compile Include="BaseDeDatos\TestConsultasClientes.cs" />
     <Compile Include="BaseDeDatos\TestConsultasObservacionesGenerales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -53,8 +53,8 @@
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasUsuarios.cs" />
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasBobinas.cs" />
     <Compile Include="MotorBaseDeDatos\Consultas\ConsultasHistorialCelular.cs" />
-    <Compile Include="MotorBaseDeDatos\HacedorDeConsultas.cs" />
-    <Compile Include="MotorBaseDeDatos\IntermediarioConexion.cs" />
+    <Compile Include="MotorBaseDeDatos\HacedoresDeConsultas\HacedorDeConsultas.cs" />
+    <Compile Include="MotorBaseDeDatos\HacedoresDeConsultas\IntermediarioConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turnos\Reloj.cs" />
     <Compile Include="Turnos\RelojBobina.cs" />

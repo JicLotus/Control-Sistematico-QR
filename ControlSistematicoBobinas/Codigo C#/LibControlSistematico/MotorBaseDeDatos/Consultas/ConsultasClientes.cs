@@ -40,12 +40,12 @@ namespace LibControlSistematico
 
         public string agregarCliente(string cliente, string txtDirec, string txtLocalidad, string txtCP, string txtProv, string txtIVA, string txtCUIT)
         {
-            return ("insert into lectorcodigo.clientes (`Index`,`Cliente`,`Direccion`,`Localidad`,`C.P.`,`Provincia`,`I.V.A.`,`CUIT`) values(NULL,'" + cliente + "','" + txtDirec + "','" + txtLocalidad + "','" + txtCP + "','" + txtProv + "','" + txtIVA + "','" + txtCUIT + "')");
+            return ("insert into `" + baseDeDatos + "`.`clientes` (`Index`,`Cliente`,`Direccion`,`Localidad`,`C.P.`,`Provincia`,`I.V.A.`,`CUIT`) values(NULL,'" + cliente + "','" + txtDirec + "','" + txtLocalidad + "','" + txtCP + "','" + txtProv + "','" + txtIVA + "','" + txtCUIT + "')");
         }
 
         public string updateCliente(string cliente, string id, string txtDirec, string txtLocalidad, string txtCP, string txtProv, string txtIVA, string txtCUIT)
         {
-            return ("Update lectorcodigo.clientes set cliente='" + cliente + "', Direccion='" + txtDirec + "', Localidad='" + txtLocalidad + "', `C.P.`='" + txtCP + "', Provincia='" + txtProv + "', `I.V.A.`='" + txtIVA + "', CUIT='" + txtCUIT + "' where clientes.index =" + id + " limit 1");
+            return ("Update `" + baseDeDatos + "`.`clientes` set cliente='" + cliente + "', Direccion='" + txtDirec + "', Localidad='" + txtLocalidad + "', `C.P.`='" + txtCP + "', Provincia='" + txtProv + "', `I.V.A.`='" + txtIVA + "', CUIT='" + txtCUIT + "' where clientes.index =" + id + " limit 1");
         }
 
         public string cargaClientesCompleto()
@@ -89,6 +89,12 @@ namespace LibControlSistematico
                 }
             }
             return ("Select * from clientes limit " + hoja_inicial + "," + limite + ";");
+        }
+
+
+        public string getIndiceNombre(string nombre)
+        {
+            return "Select clientes.index from clientes where clientes.cliente='" + nombre + "' limit 1";
         }
 
     }

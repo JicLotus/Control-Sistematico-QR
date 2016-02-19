@@ -125,7 +125,7 @@ namespace Tests.BaseDeDatos
         {
             hacedorDeConsultas.agregarProducto("Producto1", "123");
             string indice = hacedorDeConsultas.getIndiceProducto("Producto1");
-            hacedorDeConsultas.updateProducto(indice, "elnombremodificado", "frfrf");
+            hacedorDeConsultas.updateProducto("elnombremodificado", "frfrf",indice);
             indice = hacedorDeConsultas.getIndiceProducto("elnombremodificado");
             hacedorDeConsultas.borrarProducto(indice);
 
@@ -142,7 +142,7 @@ namespace Tests.BaseDeDatos
             {
                 hacedorDeConsultas.agregarProducto("Producto1", "123");
                 indice = hacedorDeConsultas.getIndiceProducto("Producto1");
-                hacedorDeConsultas.updateProducto(indice, "elnombremodificado" + i, "frfrf");
+                hacedorDeConsultas.updateProducto("elnombremodificado" + i, "frfrf", indice);
             }
 
             for (int i = 0; i < 40; i++)
@@ -233,7 +233,7 @@ namespace Tests.BaseDeDatos
         {
             hacedorDeConsultas.agregarProducto("Producto1", "123");
             string indice = hacedorDeConsultas.getIndiceProducto("Producto1");
-            hacedorDeConsultas.updateProducto(indice, "elnombremodificado", "frfrf");
+            hacedorDeConsultas.updateProducto("elnombremodificado", "frfrf",indice);
             indice = hacedorDeConsultas.getIndiceProducto("elnombremodificado");
             hacedorDeConsultas.borrarProducto(indice);
 
@@ -250,7 +250,7 @@ namespace Tests.BaseDeDatos
             {
                 hacedorDeConsultas.agregarProducto("Producto1", "123");
                 indice = hacedorDeConsultas.getIndiceProducto("Producto1");
-                hacedorDeConsultas.updateProducto(indice, "elnombremodificado" + i, "frfrf");
+                hacedorDeConsultas.updateProducto("elnombremodificado" + i, "frfrf", indice);
             }
 
             for (int i = 0; i < 40; i++)

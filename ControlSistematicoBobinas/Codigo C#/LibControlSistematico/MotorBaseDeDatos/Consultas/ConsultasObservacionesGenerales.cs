@@ -39,7 +39,7 @@ namespace LibControlSistematico
             return (consultaInicial + where);
         }
 
-        public string setObservacionGeneral(string observacion, string fecha, string horario, string maquinista)
+        public string agregarObservacionGeneral(string observacion, string fecha, string horario, string maquinista)
         {
             return "INSERT INTO `"  + baseDeDatos +  "`.`observaciones_generales` (`Index`, `Observacion`, `Fecha`, `Horario`, `Maquinista`) VALUES (NULL, '" + observacion + "', '" + fecha + "', '" + horario + "', '" + maquinista + "');";
         }
@@ -79,6 +79,26 @@ namespace LibControlSistematico
                 }
             }
             return ("Select * from observaciones_generales limit " + hoja_inicial + "," + limite + ";");
+        }
+
+        public string cantidadObservaciones()
+        {
+            return "Select count(*) from `" + baseDeDatos + "`.`observaciones_generales` limit 1";
+        }
+
+        public string getIndiceObservacion(string nombre)
+        {
+            return "Select observaciones_generales.index from observaciones_generales where observacion='" + nombre + "' limit 1";
+        }
+
+        public string borrarObservacionGeneral(string id)
+        {
+            return "Delete from observaciones_generales where observaciones_generales.index=" + id + " limit 1";
+        }
+
+        public string updateObservacionGeneral(string observacion, string fecha, string horario, string maquinista,string id)
+        {
+            return "UPDATE  `"+ baseDeDatos +"`.`observaciones_generales` SET  `Observacion` =  '"+ observacion +"' WHERE  `observaciones_generales`.`Index` =" + id;
         }
 
     }
