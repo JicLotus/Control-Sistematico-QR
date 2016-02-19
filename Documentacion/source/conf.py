@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-#
+
+
 # Control sistematico de Bobinas documentation build configuration file, created by
 # sphinx-quickstart on Tue Dec 29 15:54:31 2015.
 #
