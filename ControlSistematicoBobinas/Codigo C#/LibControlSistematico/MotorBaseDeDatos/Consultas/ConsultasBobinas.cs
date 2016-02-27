@@ -282,6 +282,10 @@ namespace LibControlSistematico
             return "Truncate reg_2014";
         }
 
-    }
+        public string cantidadBobinas()
+        {
+            return ("select count(*) from reg_2014 limit 1;");
+        }
 
+    }
 }

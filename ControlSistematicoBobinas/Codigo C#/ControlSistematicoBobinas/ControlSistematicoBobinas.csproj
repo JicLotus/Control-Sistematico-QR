@@ -58,6 +58,7 @@
     <Compile Include="Formularios\Filtros.Designer.cs">
       <DependentUpon>Filtros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormResizer.cs" />
     <Compile Include="Formularios\FormularioOperador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +97,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="usuario.cs" />
     <EmbeddedResource Include="Formularios\Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
     </EmbeddedResource>

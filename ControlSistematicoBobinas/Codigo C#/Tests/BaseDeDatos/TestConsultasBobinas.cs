@@ -14,6 +14,7 @@ namespace Tests.BaseDeDatos
         [TestInitialize]
         public void Init()
         {
+            
             hacedorDeConsultas = new HacedorDeConsultas("localhost", "3306", "1", "testDB");
         }
 
@@ -46,8 +47,7 @@ namespace Tests.BaseDeDatos
 
         [TestMethod]
         public void agregarBobinaALaBaseDeDatos(){
-        
-            hacedorDeConsultas.agregarBobina("1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion", 123, 1, "espesor", "1:1", "1", "1a2");
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreEqual(cantidadBobinas, 1);
@@ -56,8 +56,8 @@ namespace Tests.BaseDeDatos
         [TestMethod]
         public void agregarDosBobinaALaBaseDeDatos()
         {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            hacedorDeConsultas.agregarBobina("Bobina2", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion", 123, 1, "espesor", "1:1", "1", "1a2");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion2", 123, 1, "espesor2", "1:1", "1", "1a2");
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreEqual(cantidadBobinas, 2);
@@ -66,9 +66,9 @@ namespace Tests.BaseDeDatos
         [TestMethod]
         public void agregartresBobinaALaBaseDeDatos()
         {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            hacedorDeConsultas.agregarBobina("Bobina2", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            hacedorDeConsultas.agregarBobina("Bobina3", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion", 123, 1, "espesor", "1:1", "1", "1a2");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion2", 123, 1, "espesor2", "1:1", "1", "1a2");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion3", 123, 1, "espesor3", "1:1", "1", "1a2");
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreEqual(cantidadBobinas, 3);
@@ -78,85 +78,25 @@ namespace Tests.BaseDeDatos
         public void agregar40BobinaALaBaseDeDatos()
         {
             for (int i = 0; i < 40; i++)
-                hacedorDeConsultas.agregarBobina("BobinaModificado" + i, "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+                hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion"+i, 123, 1, "espesor"+i, "1:1", "1", "1a2");
 
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreEqual(cantidadBobinas, 40);
         }
 
-        [TestMethod]
-        public void eliminarBobina()
-        {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            string indice = hacedorDeConsultas.getIndiceBobina("Bobina1");
-            hacedorDeConsultas.borrarBobina(indice);
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
-            Assert.AreEqual(cantidadBobinas, 0);
-        }
+        
 
-        [TestMethod]
-        public void eliminar40Bobinas()
-        {
-            for (int i = 0; i < 40; i++)
-                hacedorDeConsultas.agregarBobina("BobinaModificado" + i, "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+        
 
-            string indice;
-
-            for (int i = 0; i < 40; i++)
-            {
-                indice = hacedorDeConsultas.getIndiceBobina("BobinaModificado" + i);
-                hacedorDeConsultas.borrarBobina(indice);
-            }
-
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreEqual(cantidadBobinas, 0);
-        }
-
-        [TestMethod]
-        public void actualizarBobina()
-        {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            string indice;
-            indice = hacedorDeConsultas.getIndiceBobina("Bobina1");
-            hacedorDeConsultas.updateBobina("BobinaModificado", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT", indice);
-            indice = hacedorDeConsultas.getIndiceBobina("BobinaModificado");
-            hacedorDeConsultas.borrarBobina(indice);
-
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreEqual(cantidadBobinas, 0);
-        }
-
-        [TestMethod]
-        public void actualizar40Bobinas()
-        {
-            string indice;
-            for (int i = 0; i < 40; i++)
-            {
-                hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-                indice = hacedorDeConsultas.getIndiceBobina("Bobina1");
-                hacedorDeConsultas.updateBobina("Bobina" + i, "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT", indice);
-            }
-
-            for (int i = 0; i < 40; i++)
-            {
-                indice = hacedorDeConsultas.getIndiceBobina("Bobina" + i);
-                hacedorDeConsultas.borrarBobina(indice);
-            }
-
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreEqual(cantidadBobinas, 0);
-        }
+        
 
 
         [TestMethod]
         public void fallaAgregarBobinaALaBaseDeDatos()
         {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion", 123, 1, "espesor", "1:1", "1", "1a2");
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreNotEqual(cantidadBobinas, 2);
@@ -165,8 +105,8 @@ namespace Tests.BaseDeDatos
         [TestMethod]
         public void FallaAgregarDosBobinaALaBaseDeDatos()
         {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            hacedorDeConsultas.agregarBobina("Bobina2", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion", 123, 1, "espesor", "1:1", "1", "1a2");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion2", 123, 1, "espesor2", "1:1", "1", "1a2");
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreNotEqual(cantidadBobinas, 3);
@@ -175,9 +115,9 @@ namespace Tests.BaseDeDatos
         [TestMethod]
         public void FallaAgregartresBobinaALaBaseDeDatos()
         {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            hacedorDeConsultas.agregarBobina("Bobina2", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            hacedorDeConsultas.agregarBobina("Bobina3", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion", 123, 1, "espesor", "1:1", "1", "1a2");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion2", 123, 1, "espesor2", "1:1", "1", "1a2");
+            hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion3", 123, 1, "espesor3", "1:1", "1", "1a2");
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreNotEqual(cantidadBobinas, 4);
@@ -187,77 +127,11 @@ namespace Tests.BaseDeDatos
         public void FallaAgregar40BobinaALaBaseDeDatos()
         {
             for (int i = 0; i < 40; i++)
-                hacedorDeConsultas.agregarBobina("BobinaModificado" + i, "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
+                hacedorDeConsultas.agregarBobina(1, 1.0, "1-1-2015", 0.1, "observacion"+i, 123, 1, "espesor"+i, "1:1", "1", "1a2");
 
             int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
 
             Assert.AreNotEqual(cantidadBobinas, 41);
-        }
-
-        [TestMethod]
-        public void FallaEliminarBobina()
-        {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            string indice = hacedorDeConsultas.getIndiceBobina("Bobina1");
-            hacedorDeConsultas.borrarBobina(indice);
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreNotEqual(cantidadBobinas, 1);
-        }
-
-        [TestMethod]
-        public void FallaEliminar40Bobinas()
-        {
-            for (int i = 0; i < 40; i++)
-                hacedorDeConsultas.agregarBobina("BobinaModificado" + i, "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-
-            string indice;
-
-            for (int i = 0; i < 40; i++)
-            {
-                indice = hacedorDeConsultas.getIndiceBobina("BobinaModificado" + i);
-                hacedorDeConsultas.borrarBobina(indice);
-            }
-
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreNotEqual(cantidadBobinas, 40);
-        }
-
-        [TestMethod]
-        public void FallaActualizarBobina()
-        {
-            hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-            string indice = hacedorDeConsultas.getIndiceBobina("Bobina1");
-            hacedorDeConsultas.updateBobina("BobinaModificado", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT", indice);
-            indice = hacedorDeConsultas.getIndiceBobina("BobinaModificado");
-            hacedorDeConsultas.borrarBobina(indice);
-
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreNotEqual(cantidadBobinas, 1);
-        }
-
-        [TestMethod]
-        public void FallaActualizar40Bobinas()
-        {
-            string indice;
-            for (int i = 0; i < 40; i++)
-            {
-                hacedorDeConsultas.agregarBobina("Bobina1", "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT");
-                indice = hacedorDeConsultas.getIndiceBobina("Bobina1");
-                hacedorDeConsultas.updateBobina("Bobina" + i, "direccion", "localidad", "CP", "Provincia", "IVA", "CUIT", indice);
-            }
-
-            for (int i = 0; i < 40; i++)
-            {
-                indice = hacedorDeConsultas.getIndiceBobina("Bobina" + i);
-                hacedorDeConsultas.borrarBobina(indice);
-            }
-
-            int cantidadBobinas = hacedorDeConsultas.cantidadBobinas();
-
-            Assert.AreNotEqual(cantidadBobinas, 40);
         }
 
 

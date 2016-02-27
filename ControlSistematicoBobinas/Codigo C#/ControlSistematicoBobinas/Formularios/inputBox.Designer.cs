@@ -34,6 +34,8 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtContra = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -83,11 +85,21 @@
             this.txtContra.Size = new System.Drawing.Size(178, 31);
             this.txtContra.TabIndex = 7;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(109, 188);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(215, 102);
+            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.Visible = false;
+            // 
             // InputBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 127);
+            this.ClientSize = new System.Drawing.Size(447, 124);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUser);
@@ -95,6 +107,8 @@
             this.Controls.Add(this.txtContra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InputBox";
+            this.Load += new System.EventHandler(this.InputBox_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +121,7 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.DataGridView dataGridView1;
 
     }
 }

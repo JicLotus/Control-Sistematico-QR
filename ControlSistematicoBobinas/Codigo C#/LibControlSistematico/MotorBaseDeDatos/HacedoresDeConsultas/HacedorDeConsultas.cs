@@ -389,6 +389,10 @@ namespace LibControlSistematico
 
 
         /////Bobinas
+        public int cantidadBobinas()
+        {
+            return Int32.Parse(intermediario.darDato(consultasBobinas.cantidadBobinas(), "COUNT(*)"));
+        }
 
         public int cantidad_hojas(int indexTipoAnio, int indexTipoNombre, int indexTipoEstado, string day, string month, string year, string day2, string month2, string year2, int idNombre, int idEstado, int nroBobina, int indexTipoClienteParam, int indexTipoPapelParam, int indexcampoFechaParam, int idTipoPapelParam, int idClienteParam)
         {

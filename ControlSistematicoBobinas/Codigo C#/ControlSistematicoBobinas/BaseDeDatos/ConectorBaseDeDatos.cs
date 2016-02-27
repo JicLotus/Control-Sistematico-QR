@@ -9,7 +9,7 @@ using LibControlSistematico;
 using System.Windows.Forms;
 
 
-namespace ControlSistematicoBobinas.BaseDeDatos
+namespace FormularioLectorCode
 {
     public class ConectorBaseDeDatos : HacedorDeConsultas
     {
