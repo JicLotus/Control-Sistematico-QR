@@ -1,4 +1,4 @@
-﻿namespace ControlSistematicoBobinas.Formularios
+﻿namespace ControlSistematicoBobinas
 {
     partial class Administrador
     {
@@ -983,6 +983,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Administrador_Load);
             this.frmCliente.ResumeLayout(false);
             this.frmCliente.PerformLayout();
             this.frmUsuarios.ResumeLayout(false);

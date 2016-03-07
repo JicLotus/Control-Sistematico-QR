@@ -1,6 +1,6 @@
-﻿namespace ControlSistematicoBobinas.Formularios
+﻿namespace ControlSistematicoBobinas
 {
-    partial class ObservacionesGenerales
+    partial class observacionesGenerales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ObservacionesGenerales));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(observacionesGenerales));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();

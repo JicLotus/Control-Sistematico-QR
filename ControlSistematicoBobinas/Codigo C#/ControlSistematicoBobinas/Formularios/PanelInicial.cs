@@ -12,7 +12,7 @@ using LibControlSistematico;
 
 using FormularioLectorCode;
 
-namespace ControlSistematicoBobinas.Formularios
+namespace ControlSistematicoBobinas
 {
     public partial class PanelInicial : Form
     {
@@ -29,7 +29,7 @@ namespace ControlSistematicoBobinas.Formularios
             consultador = new ConectorBaseDeDatos(recolectorDatos.getIp(0), recolectorDatos.getPuerto(), recolectorDatos.getMysqlTimeOut(),"lectorCode");
 
             Form panelInicial = this;
-            //frmOperador = new InputMaquinista(ref consultador, ref panelInicial, recolectorDatos.getPathGuardadoInfo1(), recolectorDatos.getPathGuardadoInfo2());
+            frmOperador = new InputMaquinista(ref consultador, ref panelInicial, recolectorDatos.getPathGuardadoInfo1(), recolectorDatos.getPathGuardadoInfo2());
 
             cmbSrv.Items.Add(recolectorDatos.getIpName());
             cmbSrv.Items.Add(recolectorDatos.getIp2Name());
@@ -68,8 +68,8 @@ namespace ControlSistematicoBobinas.Formularios
             catch (Exception ee)
             {
                 Form panelInicial = this;
-                //frmOperador = new InputMaquinista(ref consultador, ref panelInicial, recolectorDatos.getPathGuardadoInfo1(), recolectorDatos.getPathGuardadoInfo2());
-                //frmOperador.Show();
+                frmOperador = new InputMaquinista(ref consultador, ref panelInicial, recolectorDatos.getPathGuardadoInfo1(), recolectorDatos.getPathGuardadoInfo2());
+                frmOperador.Show();
             }
 
             this.Hide();

@@ -1,4 +1,4 @@
-﻿namespace ControlSistematicoBobinas.Formularios
+﻿namespace ControlSistematicoBobinas
 {
     partial class InputBox
     {

@@ -1,4 +1,4 @@
-﻿namespace ControlSistematicoBobinas.Formularios
+﻿namespace ControlSistematicoBobinas
 {
     partial class FormularioOperador
     {
@@ -571,6 +571,7 @@
             this.grpDatos.Size = new System.Drawing.Size(1132, 832);
             this.grpDatos.TabIndex = 16;
             this.grpDatos.TabStop = false;
+            this.grpDatos.Enter += new System.EventHandler(this.grpDatos_Enter);
             // 
             // FormularioOperador
             // 

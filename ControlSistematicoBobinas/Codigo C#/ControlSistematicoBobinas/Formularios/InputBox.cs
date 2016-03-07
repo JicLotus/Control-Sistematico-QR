@@ -12,7 +12,7 @@ using LibControlSistematico;
 
 using FormularioLectorCode;
 
-namespace ControlSistematicoBobinas.Formularios
+namespace ControlSistematicoBobinas
 {
     public partial class InputBox : Form
     {
@@ -49,8 +49,8 @@ namespace ControlSistematicoBobinas.Formularios
 
                 if (txtContra.Text == user.getPass())
                 {
-                    //Form frmAdmin = new Main(ref consultador, ref refPanelInicial, user.getPrivilegio(), config);
-                    //frmAdmin.Show();
+                    Form frmAdmin = new Administrador(ref consultador, ref refPanelInicial, user.getPrivilegio(), config);
+                    frmAdmin.Show();
                     this.Hide();
                 }
                 else
