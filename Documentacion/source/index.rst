@@ -9,5 +9,6 @@
 	formularioAdministrador
 	celular
 	configuracion
+	DocumentacionTecnica
 
 
