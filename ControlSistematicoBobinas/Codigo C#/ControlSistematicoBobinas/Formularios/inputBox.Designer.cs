@@ -75,6 +75,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtContra
             // 
@@ -107,6 +108,8 @@
             this.Controls.Add(this.txtContra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InputBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InputBox_FormClosed_1);
             this.Load += new System.EventHandler(this.InputBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

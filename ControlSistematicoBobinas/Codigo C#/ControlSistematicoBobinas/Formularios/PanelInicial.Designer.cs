@@ -63,6 +63,7 @@
             this.btOperador.TabIndex = 6;
             this.btOperador.Text = "Formulario";
             this.btOperador.UseVisualStyleBackColor = true;
+            this.btOperador.Click += new System.EventHandler(this.btOperador_Click_1);
             // 
             // BtAdmin
             // 
@@ -74,6 +75,7 @@
             this.BtAdmin.TabIndex = 5;
             this.BtAdmin.Text = "Administrador";
             this.BtAdmin.UseVisualStyleBackColor = true;
+            this.BtAdmin.Click += new System.EventHandler(this.BtAdmin_Click);
             // 
             // PanelInicial
             // 

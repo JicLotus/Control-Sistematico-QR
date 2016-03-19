@@ -489,6 +489,7 @@
             this.Name = "Filtros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtros";
+            this.Load += new System.EventHandler(this.Filtros_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

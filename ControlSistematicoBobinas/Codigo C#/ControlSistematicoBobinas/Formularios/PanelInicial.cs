@@ -26,7 +26,7 @@ namespace ControlSistematicoBobinas
             InitializeComponent();
             recolectorDatos = new ArchivoIni();
             recolectorDatos.LeerArchivo(true);
-            consultador = new ConectorBaseDeDatos(recolectorDatos.getIp(0), recolectorDatos.getPuerto(), recolectorDatos.getMysqlTimeOut(),"lectorCode");
+            consultador = new ConectorBaseDeDatos(recolectorDatos.getIp(0), recolectorDatos.getPuerto(), recolectorDatos.getMysqlTimeOut(),"lectorcodigo");
 
             Form panelInicial = this;
             frmOperador = new InputMaquinista(ref consultador, ref panelInicial, recolectorDatos.getPathGuardadoInfo1(), recolectorDatos.getPathGuardadoInfo2());
@@ -43,12 +43,12 @@ namespace ControlSistematicoBobinas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.abrirPanelInputAdmin();
+            
         }
 
         private void btOperador_Click(object sender, EventArgs e)
         {
-            this.abrirPanelOperador();
+            
         }
 
         private void PanelInicial_Load(object sender, EventArgs e)
@@ -123,6 +123,16 @@ namespace ControlSistematicoBobinas
         private void cmbSrv_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.changeIp();
+        }
+
+        private void BtAdmin_Click(object sender, EventArgs e)
+        {
+            this.abrirPanelInputAdmin();
+        }
+
+        private void btOperador_Click_1(object sender, EventArgs e)
+        {
+            this.abrirPanelOperador();
         }
 
     }

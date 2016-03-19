@@ -42,6 +42,17 @@ namespace ControlSistematicoBobinas
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void InputBox_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             try
             {
 
@@ -64,10 +75,9 @@ namespace ControlSistematicoBobinas
                 //MessageBox.Show(ee.Message);
                 MessageBox.Show("Error! No se pudo conectar con el servidor.");
             }
-
         }
 
-        private void InputBox_FormClosed(object sender, FormClosedEventArgs e)
+        private void InputBox_FormClosed_1(object sender, FormClosedEventArgs e)
         {
             refPanelInicial.Show();
         }
