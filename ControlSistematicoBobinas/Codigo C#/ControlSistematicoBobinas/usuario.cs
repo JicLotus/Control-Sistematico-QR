@@ -26,7 +26,6 @@ namespace FormularioLectorCode
             consultador.getUsers();
             nombre = nombreParam;
             this.cargarDatos();
-            
         }
 
         public void cargarDatos() 
@@ -40,6 +39,7 @@ namespace FormularioLectorCode
             {
                 string nombreConsulta = gw[indexNombre, i].Value.ToString().ToUpper();
                 
+
                 if (nombreConsulta == nombre.ToUpper())
                 {
                     string passConsulta = gw[indexContr, i].Value.ToString();

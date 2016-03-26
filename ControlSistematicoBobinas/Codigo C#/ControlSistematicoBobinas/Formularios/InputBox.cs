@@ -55,6 +55,10 @@ namespace ControlSistematicoBobinas
         {
             try
             {
+                if (txtContra.Text == "" || txtUser.Text == "") {
+                    MessageBox.Show(negativo);
+                    return;
+                }
 
                 usuario user = new usuario(ref consultador, txtUser.Text, dataGridView1);
 

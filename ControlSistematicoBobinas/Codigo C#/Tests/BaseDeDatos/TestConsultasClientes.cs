@@ -23,7 +23,6 @@ namespace Tests.BaseDeDatos
             hacedorDeConsultas.vaciarBaseDeDatos();
         }
 
-
         private TestContext testContextInstance;
 
         /// <summary>
@@ -41,7 +40,6 @@ namespace Tests.BaseDeDatos
                 testContextInstance = value;
             }
         }
-
 
 
         [TestMethod]

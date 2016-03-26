@@ -22,7 +22,7 @@ namespace ControlSistematicoBobinas.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ControlSistematicoBobinas.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ControlSistematicoBobinas.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace ControlSistematicoBobinas.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Arrow_first_ {
+        public static System.Drawing.Icon _16__Arrow_first_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Arrow_first_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -73,7 +73,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Arrow_last_ {
+        public static System.Drawing.Icon _16__Arrow_last_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Arrow_last_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -83,7 +83,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Delete_ {
+        public static System.Drawing.Icon _16__Delete_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Delete_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -93,7 +93,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Idcard_ {
+        public static System.Drawing.Icon _16__Idcard_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Idcard_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -103,7 +103,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Insert_bitmap_ {
+        public static System.Drawing.Icon _16__Insert_bitmap_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Insert_bitmap_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -113,7 +113,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Ok_ {
+        public static System.Drawing.Icon _16__Ok_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Ok_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -123,7 +123,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Print_ {
+        public static System.Drawing.Icon _16__Print_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Print_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -133,7 +133,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon _16__Save_ {
+        public static System.Drawing.Icon _16__Save_ {
             get {
                 object obj = ResourceManager.GetObject("_16__Save_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -143,7 +143,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gifdecargaa {
+        public static System.Drawing.Bitmap gifdecargaa {
             get {
                 object obj = ResourceManager.GetObject("gifdecargaa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon kdf {
+        public static System.Drawing.Icon kdf {
             get {
                 object obj = ResourceManager.GetObject("kdf", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -163,7 +163,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rectangulo {
+        public static System.Drawing.Bitmap rectangulo {
             get {
                 object obj = ResourceManager.GetObject("rectangulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rectanguloRallado {
+        public static System.Drawing.Bitmap rectanguloRallado {
             get {
                 object obj = ResourceManager.GetObject("rectanguloRallado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rectanguloRedondeado {
+        public static System.Drawing.Bitmap rectanguloRedondeado {
             get {
                 object obj = ResourceManager.GetObject("rectanguloRedondeado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rectanguloRedondeadoRallado {
+        public static System.Drawing.Bitmap rectanguloRedondeadoRallado {
             get {
                 object obj = ResourceManager.GetObject("rectanguloRedondeadoRallado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +203,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stockMaster {
+        public static System.Drawing.Bitmap stockMaster {
             get {
                 object obj = ResourceManager.GetObject("stockMaster", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace ControlSistematicoBobinas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon synaptic {
+        public static System.Drawing.Icon synaptic {
             get {
                 object obj = ResourceManager.GetObject("synaptic", resourceCulture);
                 return ((System.Drawing.Icon)(obj));

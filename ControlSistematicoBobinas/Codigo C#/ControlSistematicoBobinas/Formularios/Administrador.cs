@@ -10,13 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using LibControlSistematico;
 
+using LibControlSistematico;
+using FormularioLectorCode;
 using System.IO;
 using System.Drawing.Imaging;
 using System.IO.Compression;
-
-using FormularioLectorCode;
 
 namespace ControlSistematicoBobinas
 {
@@ -25,7 +24,7 @@ namespace ControlSistematicoBobinas
         private Form refPanelInicial;
         private string id;
         private int contador_hoja;
-        public ConectorBaseDeDatos consultador;
+        private ConectorBaseDeDatos consultador;
         grillaPartesDiarios MyDataGridViewPrinter;
         private tipoCarga solapaActual;
         private privilegio priv;
@@ -74,7 +73,9 @@ namespace ControlSistematicoBobinas
                     Height -= 60;
                     Width -= 260;
                     break;
+
             };
+
             objFormResizer.ResizeForm(this, Height, Width);
         }
 
@@ -148,7 +149,7 @@ namespace ControlSistematicoBobinas
                     consultador.getObsGenerales();
                     break;
                 case tipoCarga.PHONESHISTORY:
-                    TotalHojas.Text = consultador.cantidadHojasHistorialCelular().ToString();
+                    TotalHojas.Text = consultador.cantidadHojasHistorialCelular(apariencia.getIndexTipoPrincipal(), apariencia.getDateDay(), apariencia.getDateMonth(), apariencia.getDateYear(), apariencia.getHastaDay(), apariencia.getHastaMonth(), apariencia.getHastaYear()).ToString();
                     consultador.getHistorial();
                     break;
                 case tipoCarga.PRODUCTOS:
@@ -309,7 +310,7 @@ namespace ControlSistematicoBobinas
         {
             dataGridView1.Columns.Clear();
 
-            this.frmVisibles(false, false, false, true, true, false, true, true, true);
+            this.frmVisibles(false, false, false, true, true, false, true, true, true,false);
             propiedades_visualizar("Lector Codigo [Datos Cargados]", false, false);
             this.Volver_pagina_inicial();
             dataGridView1.Sort(this.dataGridView1.Columns["Numero_Bobina"], ListSortDirection.Descending);
@@ -322,7 +323,7 @@ namespace ControlSistematicoBobinas
 
         private void establecerControlesUsuarios()
         {
-            this.frmVisibles(false, false, false, false, false, true, false, false, true);
+            this.frmVisibles(false, false, false, false, false, true, false, false, true,false);
             propiedades_visualizar("Lector Codigo [Usuarios Cargados]", true, true);
             this.Volver_pagina_inicial();
             dataGridView1.Sort(this.dataGridView1.Columns["id"], ListSortDirection.Descending);
@@ -334,7 +335,7 @@ namespace ControlSistematicoBobinas
 
         private void establecerControlesClientes()
         {
-            this.frmVisibles(true, false, false, false, false, false, false, false, true);
+            this.frmVisibles(true, false, false, false, false, false, false, false, true,false);
             propiedades_visualizar("Lector Codigo [Clientes Cargados]", true, true);
             this.Volver_pagina_inicial();
             dataGridView1.Sort(this.dataGridView1.Columns["Index"], ListSortDirection.Descending);
@@ -346,7 +347,7 @@ namespace ControlSistematicoBobinas
 
         private void establecerControlesMaquinistas()
         {
-            this.frmVisibles(false, false, true, false, false, false, false, false, true);
+            this.frmVisibles(false, false, true, false, false, false, false, false, true,false);
             propiedades_visualizar("Lector Codigo [Maquinistas Cargados]", true, true);
             this.Volver_pagina_inicial();
             dataGridView1.Sort(this.dataGridView1.Columns["Index"], ListSortDirection.Descending);
@@ -358,7 +359,7 @@ namespace ControlSistematicoBobinas
 
         private void establecerControlesProductos()
         {
-            this.frmVisibles(false, true, false, false, false, false, false, false, true);
+            this.frmVisibles(false, true, false, false, false, false, false, false, true,false);
             propiedades_visualizar("Lector Codigo [Productos Cargados]", true, true);
             this.Volver_pagina_inicial();
             dataGridView1.Sort(this.dataGridView1.Columns["Index"], ListSortDirection.Descending);
@@ -455,7 +456,7 @@ namespace ControlSistematicoBobinas
             btnNuevo.Visible = btnNuevoParam;
         }
 
-        private void frmVisibles(bool frmClienteParam, bool frmProductosParam, bool frmMaquinistasParam, bool frmDatosCargadosParam, bool vistaImprimirParam, bool frmUsuariosParam, bool frmDatosParam, bool btnFiltrosParam, bool frmEdicionParam)
+        private void frmVisibles(bool frmClienteParam, bool frmProductosParam, bool frmMaquinistasParam, bool frmDatosCargadosParam, bool vistaImprimirParam, bool frmUsuariosParam, bool frmDatosParam, bool btnFiltrosParam, bool frmEdicionParam,bool grpFiltroFechaParam)
         {
             frmCliente.Visible = frmClienteParam;
             frmProductos.Visible = frmProductosParam;
@@ -467,7 +468,7 @@ namespace ControlSistematicoBobinas
             vistaPreviaToolStripMenuItem.Visible = vistaImprimirParam;
             filtrosToolStripMenuItem.Visible = btnFiltrosParam;
             frmEdicion.Visible = frmEdicionParam;
-
+            grpFiltroFecha.Visible = grpFiltroFechaParam;
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -776,8 +777,8 @@ namespace ControlSistematicoBobinas
 
         private void filtrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*Filtros frmFiltros = new Filtros(ref apariencia);
-            frmFiltros.Show();*/
+            Filtros frmFiltros = new Filtros(ref apariencia);
+            frmFiltros.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -823,7 +824,7 @@ namespace ControlSistematicoBobinas
 
         private void establecerControlesHistorialCelulares()
         {
-            this.frmVisibles(false, false, false, false, false, false, false, false, false);
+            this.frmVisibles(false, false, false, false, false, false, false, false, false,true);
             propiedades_visualizar("Lector Codigo [Historial Celulares]", false, false);
 
             this.Volver_pagina_inicial();
@@ -836,7 +837,7 @@ namespace ControlSistematicoBobinas
 
         private void establecerControlesObservacionesGenerales()
         {
-            this.frmVisibles(false, false, false, false, false, false, false, false, false);
+            this.frmVisibles(false, false, false, false, false, false, false, false, false,true);
             propiedades_visualizar("Lector Codigo [Observaciones Generales]", false, false);
 
             this.Volver_pagina_inicial();

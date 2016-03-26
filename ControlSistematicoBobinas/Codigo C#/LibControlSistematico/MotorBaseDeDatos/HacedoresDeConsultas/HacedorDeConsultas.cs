@@ -6,7 +6,7 @@ using System.Text;
 using LibControlSistematico;
 using System.Globalization;
 using System.IO;
-
+using System.Data;
 
 namespace LibControlSistematico
 {
@@ -25,12 +25,17 @@ namespace LibControlSistematico
 
         private int regs_hoja;
         protected IntermediarioConexion intermediario;
-        
+        protected DataTable dataTable;
 
         public HacedorDeConsultas(string ip, string puerto, string timeOut,string baseDeDatos)
         {
             this.inicializarConsultas(baseDeDatos);
             intermediario = new IntermediarioConexion(ip, puerto, timeOut,baseDeDatos);
+        }
+
+        public virtual void setBSource(ref DataTable dataTableParam) 
+        {
+            dataTable = dataTableParam;
         }
 
         private void inicializarConsultas(string baseDeDatos) 
@@ -326,8 +331,9 @@ namespace LibControlSistematico
             intermediario.consultar(consultasHistorialCelular.accionPaginaHistorialCelular(this.cantidad_reg_actuales(), contadorHoja));
         }
 
-        public int cantidadHojasHistorialCelular()
+        public int cantidadHojasHistorialCelular(int indexTipoAnioParam, string dayParam, string monthParam, string yearParam, string dayParam2, string monthParam2, string yearParam2)
         {
+            consultasHistorialCelular.setIndicesFiltro(indexTipoAnioParam, dayParam,monthParam,yearParam, dayParam2,monthParam2, yearParam2);
             return intermediario.cantidad_hojas(ref cantidad_registros_actuales, consultasHistorialCelular.countPhonesHistory(), regs_hoja);
         }
         ///

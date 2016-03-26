@@ -1,5 +1,6 @@
 ﻿namespace ControlSistematicoBobinas
 {
+
     partial class FormularioOperador
     {
         /// <summary>
@@ -28,6 +29,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioOperador));
+            this.grpDatos = new System.Windows.Forms.GroupBox();
             this.btnObsGral = new System.Windows.Forms.Button();
             this.btnSalirMaquinista = new System.Windows.Forms.Button();
             this.lblPeso = new System.Windows.Forms.Label();
@@ -43,6 +46,7 @@
             this.txtCoil = new System.Windows.Forms.MaskedTextBox();
             this.txtWeight = new System.Windows.Forms.MaskedTextBox();
             this.txtFormat = new System.Windows.Forms.MaskedTextBox();
+            this.qrCodeImgControl1 = new Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeImgControl();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,11 +73,62 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.grpDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qrCodeImgControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
-            this.grpDatos.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // grpDatos
+            // 
+            this.grpDatos.Controls.Add(this.btnObsGral);
+            this.grpDatos.Controls.Add(this.btnSalirMaquinista);
+            this.grpDatos.Controls.Add(this.lblPeso);
+            this.grpDatos.Controls.Add(this.label17);
+            this.grpDatos.Controls.Add(this.checkBox7);
+            this.grpDatos.Controls.Add(this.checkBox6);
+            this.grpDatos.Controls.Add(this.checkBox5);
+            this.grpDatos.Controls.Add(this.checkBox4);
+            this.grpDatos.Controls.Add(this.checkBox3);
+            this.grpDatos.Controls.Add(this.checkBox2);
+            this.grpDatos.Controls.Add(this.checkBox1);
+            this.grpDatos.Controls.Add(this.txtEspesor);
+            this.grpDatos.Controls.Add(this.txtCoil);
+            this.grpDatos.Controls.Add(this.txtWeight);
+            this.grpDatos.Controls.Add(this.txtFormat);
+            this.grpDatos.Controls.Add(this.qrCodeImgControl1);
+            this.grpDatos.Controls.Add(this.radioButton2);
+            this.grpDatos.Controls.Add(this.radioButton1);
+            this.grpDatos.Controls.Add(this.label16);
+            this.grpDatos.Controls.Add(this.label15);
+            this.grpDatos.Controls.Add(this.button1);
+            this.grpDatos.Controls.Add(this.picBarcode);
+            this.grpDatos.Controls.Add(this.data);
+            this.grpDatos.Controls.Add(this.label14);
+            this.grpDatos.Controls.Add(this.label13);
+            this.grpDatos.Controls.Add(this.label12);
+            this.grpDatos.Controls.Add(this.label11);
+            this.grpDatos.Controls.Add(this.label10);
+            this.grpDatos.Controls.Add(this.label9);
+            this.grpDatos.Controls.Add(this.label8);
+            this.grpDatos.Controls.Add(this.cmbCliente);
+            this.grpDatos.Controls.Add(this.BotonIngresarCodigo);
+            this.grpDatos.Controls.Add(this.txtObservation);
+            this.grpDatos.Controls.Add(this.label7);
+            this.grpDatos.Controls.Add(this.cmbTipe);
+            this.grpDatos.Controls.Add(this.txtDate);
+            this.grpDatos.Controls.Add(this.label6);
+            this.grpDatos.Controls.Add(this.label5);
+            this.grpDatos.Controls.Add(this.label4);
+            this.grpDatos.Controls.Add(this.label3);
+            this.grpDatos.Controls.Add(this.label2);
+            this.grpDatos.Controls.Add(this.label1);
+            this.grpDatos.Location = new System.Drawing.Point(12, 12);
+            this.grpDatos.Name = "grpDatos";
+            this.grpDatos.Size = new System.Drawing.Size(1132, 832);
+            this.grpDatos.TabIndex = 15;
+            this.grpDatos.TabStop = false;
+            this.grpDatos.Enter += new System.EventHandler(this.grpDatos_Enter);
             // 
             // btnObsGral
             // 
@@ -85,6 +140,7 @@
             this.btnObsGral.TabStop = false;
             this.btnObsGral.Text = "Observacion general";
             this.btnObsGral.UseVisualStyleBackColor = true;
+            this.btnObsGral.Click += new System.EventHandler(this.btnObsGral_Click);
             // 
             // btnSalirMaquinista
             // 
@@ -95,6 +151,7 @@
             this.btnSalirMaquinista.TabIndex = 197;
             this.btnSalirMaquinista.Text = "PRESIONE PARA CAMBIO DE MAQUINISTA";
             this.btnSalirMaquinista.UseVisualStyleBackColor = true;
+            this.btnSalirMaquinista.Click += new System.EventHandler(this.btnSalirMaquinista_Click);
             // 
             // lblPeso
             // 
@@ -211,6 +268,7 @@
             this.txtEspesor.Size = new System.Drawing.Size(458, 62);
             this.txtEspesor.TabIndex = 29;
             this.txtEspesor.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.txtEspesor.Enter += new System.EventHandler(this.txtEspesor_Enter);
             // 
             // txtCoil
             // 
@@ -222,6 +280,7 @@
             this.txtCoil.Size = new System.Drawing.Size(467, 62);
             this.txtCoil.TabIndex = 24;
             this.txtCoil.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.txtCoil.Enter += new System.EventHandler(this.txtCoil_Enter);
             // 
             // txtWeight
             // 
@@ -235,6 +294,7 @@
             this.txtWeight.TabIndex = 23;
             this.txtWeight.TabStop = false;
             this.txtWeight.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.txtWeight.Enter += new System.EventHandler(this.txtWeight_Enter_1);
             // 
             // txtFormat
             // 
@@ -246,6 +306,21 @@
             this.txtFormat.Size = new System.Drawing.Size(467, 62);
             this.txtFormat.TabIndex = 22;
             this.txtFormat.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.txtFormat.Enter += new System.EventHandler(this.txtFormat_Enter);
+            // 
+            // qrCodeImgControl1
+            // 
+            this.qrCodeImgControl1.ErrorCorrectLevel = Gma.QrCodeNet.Encoding.ErrorCorrectionLevel.M;
+            this.qrCodeImgControl1.Image = ((System.Drawing.Image)(resources.GetObject("qrCodeImgControl1.Image")));
+            this.qrCodeImgControl1.Location = new System.Drawing.Point(551, 620);
+            this.qrCodeImgControl1.Name = "qrCodeImgControl1";
+            this.qrCodeImgControl1.QuietZoneModule = Gma.QrCodeNet.Encoding.Windows.Render.QuietZoneModules.Two;
+            this.qrCodeImgControl1.Size = new System.Drawing.Size(50, 49);
+            this.qrCodeImgControl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.qrCodeImgControl1.TabIndex = 95;
+            this.qrCodeImgControl1.TabStop = false;
+            this.qrCodeImgControl1.Text = "qrCodeImgControl1";
+            this.qrCodeImgControl1.Visible = false;
             // 
             // radioButton2
             // 
@@ -257,6 +332,7 @@
             this.radioButton2.TabIndex = 194;
             this.radioButton2.Text = "Manual";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -270,6 +346,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Automatico";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label16
             // 
@@ -411,6 +488,7 @@
             // BotonIngresarCodigo
             // 
             this.BotonIngresarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonIngresarCodigo.Image = global::ControlSistematicoBobinas.Properties.Resources._16__Ok_.ToBitmap();
             this.BotonIngresarCodigo.Location = new System.Drawing.Point(668, 701);
             this.BotonIngresarCodigo.Name = "BotonIngresarCodigo";
             this.BotonIngresarCodigo.Size = new System.Drawing.Size(458, 125);
@@ -419,6 +497,7 @@
             this.BotonIngresarCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BotonIngresarCodigo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BotonIngresarCodigo.UseVisualStyleBackColor = true;
+            this.BotonIngresarCodigo.Click += new System.EventHandler(this.BotonIngresarCodigo_Click_1);
             // 
             // txtObservation
             // 
@@ -523,110 +602,37 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Material Tipo:";
             // 
-            // grpDatos
-            // 
-            this.grpDatos.Controls.Add(this.btnObsGral);
-            this.grpDatos.Controls.Add(this.btnSalirMaquinista);
-            this.grpDatos.Controls.Add(this.lblPeso);
-            this.grpDatos.Controls.Add(this.label17);
-            this.grpDatos.Controls.Add(this.checkBox7);
-            this.grpDatos.Controls.Add(this.checkBox6);
-            this.grpDatos.Controls.Add(this.checkBox5);
-            this.grpDatos.Controls.Add(this.checkBox4);
-            this.grpDatos.Controls.Add(this.checkBox3);
-            this.grpDatos.Controls.Add(this.checkBox2);
-            this.grpDatos.Controls.Add(this.checkBox1);
-            this.grpDatos.Controls.Add(this.txtEspesor);
-            this.grpDatos.Controls.Add(this.txtCoil);
-            this.grpDatos.Controls.Add(this.txtWeight);
-            this.grpDatos.Controls.Add(this.txtFormat);
-            this.grpDatos.Controls.Add(this.radioButton2);
-            this.grpDatos.Controls.Add(this.radioButton1);
-            this.grpDatos.Controls.Add(this.label16);
-            this.grpDatos.Controls.Add(this.label15);
-            this.grpDatos.Controls.Add(this.button1);
-            this.grpDatos.Controls.Add(this.picBarcode);
-            this.grpDatos.Controls.Add(this.data);
-            this.grpDatos.Controls.Add(this.label14);
-            this.grpDatos.Controls.Add(this.label13);
-            this.grpDatos.Controls.Add(this.label12);
-            this.grpDatos.Controls.Add(this.label11);
-            this.grpDatos.Controls.Add(this.label10);
-            this.grpDatos.Controls.Add(this.label9);
-            this.grpDatos.Controls.Add(this.label8);
-            this.grpDatos.Controls.Add(this.cmbCliente);
-            this.grpDatos.Controls.Add(this.BotonIngresarCodigo);
-            this.grpDatos.Controls.Add(this.txtObservation);
-            this.grpDatos.Controls.Add(this.label7);
-            this.grpDatos.Controls.Add(this.cmbTipe);
-            this.grpDatos.Controls.Add(this.txtDate);
-            this.grpDatos.Controls.Add(this.label6);
-            this.grpDatos.Controls.Add(this.label5);
-            this.grpDatos.Controls.Add(this.label4);
-            this.grpDatos.Controls.Add(this.label3);
-            this.grpDatos.Controls.Add(this.label2);
-            this.grpDatos.Controls.Add(this.label1);
-            this.grpDatos.Location = new System.Drawing.Point(12, 12);
-            this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Size = new System.Drawing.Size(1132, 832);
-            this.grpDatos.TabIndex = 16;
-            this.grpDatos.TabStop = false;
-            this.grpDatos.Enter += new System.EventHandler(this.grpDatos_Enter);
-            // 
             // FormularioOperador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 753);
+            this.ClientSize = new System.Drawing.Size(1150, 780);
             this.Controls.Add(this.grpDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormularioOperador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formulario de Datos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormularioOperador_FormClosed);
             this.Load += new System.EventHandler(this.FormularioOperador_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
+            this.VisibleChanged += new System.EventHandler(this.FormularioOperador_VisibleChanged);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormularioOperador_KeyUp);
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qrCodeImgControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnObsGral;
-        private System.Windows.Forms.Button btnSalirMaquinista;
-        private System.Windows.Forms.Label lblPeso;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox txtEspesor;
-        private System.Windows.Forms.MaskedTextBox txtCoil;
-        private System.Windows.Forms.MaskedTextBox txtWeight;
-        private System.Windows.Forms.MaskedTextBox txtFormat;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox picBarcode;
-        private System.Windows.Forms.DataGridView data;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.GroupBox grpDatos;
         private System.Windows.Forms.Button BotonIngresarCodigo;
         private System.Windows.Forms.TextBox txtObservation;
         private System.Windows.Forms.Label label7;
@@ -638,6 +644,36 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grpDatos;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox picBarcode;
+        private System.Windows.Forms.DataGridView data;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private Gma.QrCodeNet.Encoding.Windows.Forms.QrCodeImgControl qrCodeImgControl1;
+        private System.Windows.Forms.MaskedTextBox txtFormat;
+        private System.Windows.Forms.MaskedTextBox txtWeight;
+        private System.Windows.Forms.MaskedTextBox txtCoil;
+        private System.Windows.Forms.MaskedTextBox txtEspesor;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblPeso;
+        private System.Windows.Forms.Button btnSalirMaquinista;
+        private System.Windows.Forms.Button btnObsGral;
     }
 }

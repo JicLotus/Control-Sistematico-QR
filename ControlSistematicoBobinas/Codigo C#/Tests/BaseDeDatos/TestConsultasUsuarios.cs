@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using LibControlSistematico;
 
-namespace Tests.BaseDeDatos
+namespace Tests
 {
     /// <summary>
     /// Descripción resumida de testConsultasSQL
@@ -29,23 +29,6 @@ namespace Tests.BaseDeDatos
         }
 
 
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Obtiene o establece el contexto de las pruebas que proporciona
-        ///información y funcionalidad para la serie de pruebas actual.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
 
 
 

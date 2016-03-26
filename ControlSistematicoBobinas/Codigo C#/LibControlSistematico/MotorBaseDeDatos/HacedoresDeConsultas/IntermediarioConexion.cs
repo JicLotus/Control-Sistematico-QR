@@ -21,7 +21,7 @@ namespace LibControlSistematico
         public ConectorDB Conexion;
         public MySqlDataAdapter Adaptador;
         public DataTable DatosDeTabla;
-        
+        public PuenteBSource puenteBSource;
 
         public IntermediarioConexion(string ip, string puerto, string timeOut,string baseDeDatos)
         {
@@ -51,7 +51,13 @@ namespace LibControlSistematico
 
             DatosDeTabla = new DataTable();
             
-            
+        }
+
+
+        public void setPuenteBSource(ref PuenteBSource puenteBSourceParam)
+        {
+            puenteBSource = puenteBSourceParam;
+            puenteBSource.setDataSource(ref DatosDeTabla);
         }
 
 
@@ -65,6 +71,10 @@ namespace LibControlSistematico
             Conexion.setServerIP(ip);
         }
 
+        public int getRows()
+        {
+            return DatosDeTabla.Rows.Count;
+        }
 
         public void consultar(string consulta)
         {
@@ -89,7 +99,13 @@ namespace LibControlSistematico
 
             DatosDeTabla = null;
             //bSource.DataSource = null;
+            
             DatosDeTabla = new DataTable();
+            if (puenteBSource!=null)
+            {
+                puenteBSource.borrarDataSource();
+                puenteBSource.setDataSource(ref DatosDeTabla);
+            }
             //bSource.DataSource = DatosDeTabla;
         }
 
