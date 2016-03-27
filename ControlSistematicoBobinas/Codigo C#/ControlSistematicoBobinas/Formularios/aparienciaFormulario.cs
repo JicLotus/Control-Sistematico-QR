@@ -37,9 +37,11 @@ namespace ControlSistematicoBobinas
 
         private ToolStripMenuItem btnInforme,btnParteDiario, btnRemito, btnRemitoVistaPrevia;
 
-        int indexTipoAnio, indexTipoMaquinista, indexTipoEstado, indexTipoCliente, indexTipoPapel;
+        int indexTipoAnio, indexTipoAnio2, indexTipoMaquinista, indexTipoEstado, indexTipoCliente, indexTipoPapel;
         string day, month, year;
         string day2, month2, year2;
+        string dayDesde2, monthDesde2, yearDesde2;
+        string dayHasta2, monthHasta2, yearHasta2;
         private int idMaquinista, idEstado, idTipoPapel, idCliente, nroBobina;
         private double porcentajeRemito;
         private int tipocampoFecha;
@@ -60,6 +62,7 @@ namespace ControlSistematicoBobinas
             HCSuper = new Dictionary<string, List<string>>();
             config = configParam;
             this.inicializarVariablesFiltro();
+            this.inicializarVariablesFiltro2();
             dataGridView1.ReadOnly = false;
         }
 
@@ -87,6 +90,19 @@ namespace ControlSistematicoBobinas
             porcentajeRemito = config.getPorcentajeRemito();
             tipocampoFecha = config.getTipoCampoFecha();
             nroBobina = config.getNroBobina();
+        }
+
+        private void inicializarVariablesFiltro2()
+        {
+            indexTipoAnio2 = 0;
+
+            string fecha = DateTime.Today.ToString("dd-MM-yyyy");
+            dayDesde2 = fecha.Split('-')[0];
+            monthDesde2 = fecha.Split('-')[1];
+            yearDesde2 = fecha.Split('-')[2];
+            dayHasta2 = fecha.Split('-')[0];
+            monthHasta2 = fecha.Split('-')[1];
+            yearHasta2 = fecha.Split('-')[2];
         }
 
         public void accionPagina() 
@@ -602,6 +618,37 @@ namespace ControlSistematicoBobinas
             return (Convert.ToDouble(porcentajeRemito) / 100);
         }
 
+
+        public string getDateDay2()
+        {
+            return dayDesde2;
+        }
+
+        public string getDateMonth2()
+        {
+            return monthDesde2;
+        }
+
+        public string getDateYear2()
+        {
+            return yearDesde2;
+        }
+
+        public string getHastaDay2()
+        {
+            return dayHasta2;
+        }
+
+        public string getHastaMonth2()
+        {
+            return monthHasta2;
+        }
+
+        public string getHastaYear2()
+        {
+            return yearHasta2;
+        }
+
         public string getDateDay(){
             return day;
         }
@@ -634,6 +681,11 @@ namespace ControlSistematicoBobinas
         public int getIndexTipoPrincipal()
         {
             return indexTipoAnio;
+        }
+
+        public int getIndexTipoPrincipal2()
+        {
+            return indexTipoAnio2;
         }
 
         public int getIndexTipoMaquinista()
@@ -680,6 +732,7 @@ namespace ControlSistematicoBobinas
         {
             return tipocampoFecha;
         }
+
 
         public int getNroBobina() 
         {
@@ -799,6 +852,21 @@ namespace ControlSistematicoBobinas
         {
             tipocampoFecha = CampoFechaParam;
         }
+
+        public void setFechaDesde2(DateTime textoFechaDesde)
+        {
+            dayDesde2 = textoFechaDesde.Day.ToString();
+            monthDesde2 = textoFechaDesde.Month.ToString();
+            yearDesde2 = textoFechaDesde.Year.ToString();
+        }
+
+        public void setFechaHasta2(DateTime textoFechaHasta)
+        {
+            dayHasta2 = textoFechaHasta.Day.ToString();
+            monthHasta2 = textoFechaHasta.Month.ToString();
+            yearHasta2 = textoFechaHasta.Year.ToString();
+        }
+
         
         /*
         * Retorna id del Nombre del maquinista
@@ -868,6 +936,11 @@ namespace ControlSistematicoBobinas
         public void setTipoPrincipal(int cmbTipoPrincipal)
         {
             indexTipoAnio = Convert.ToInt32(cmbTipoPrincipal);
+        }
+
+        public void setTipoPrincipal2(int cmbTipoPrincipal)
+        {
+            indexTipoAnio2 = Convert.ToInt32(cmbTipoPrincipal);
         }
 
         public void setVariablesControlesMain(ref MaskedTextBox mskGramajeParam, ref MaskedTextBox mskPesoParam, ref Label lblEstadoParam, ref TextBox txtEspParam, ref TextBox txtObsParam, ref ComboBox cmbTipoParam, ref ComboBox cmbClienteParam, ref ToolStripMenuItem btnInformeTotalParam, ref ToolStripMenuItem btnParteDiarioParam, ref ToolStripMenuItem btnRemitoParam, ref ToolStripMenuItem btnRemitoVistaPreviaParam, ref ComboBox cmbEstadoParam)

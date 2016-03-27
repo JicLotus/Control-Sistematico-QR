@@ -387,8 +387,9 @@ namespace LibControlSistematico
             intermediario.consultar(consultasObservacionesGenerales.accionPaginaObsGenerales(this.cantidad_reg_actuales(), contadorHoja));
         }
 
-        public int cantidadHojasObsGeneral()
+        public int cantidadHojasObsGeneral(int indexTipoAnioParam, string dayParam, string monthParam, string yearParam, string dayParam2, string monthParam2, string yearParam2)
         {
+            consultasObservacionesGenerales.setIndicesFiltro(indexTipoAnioParam, dayParam, monthParam, yearParam, dayParam2, monthParam2, yearParam2);
             return intermediario.cantidad_hojas(ref cantidad_registros_actuales, consultasObservacionesGenerales.countObservacionesGenerales(), regs_hoja);
         }
         ///

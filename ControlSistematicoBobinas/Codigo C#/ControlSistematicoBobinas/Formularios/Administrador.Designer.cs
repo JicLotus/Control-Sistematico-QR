@@ -124,6 +124,7 @@
             this.cmbDesde = new System.Windows.Forms.DateTimePicker();
             this.cmbTipoPrincipal = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.AplicarCambios = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -1006,6 +1007,7 @@
             // 
             // grpFiltroFecha
             // 
+            this.grpFiltroFecha.Controls.Add(this.AplicarCambios);
             this.grpFiltroFecha.Controls.Add(this.lblHasta);
             this.grpFiltroFecha.Controls.Add(this.cmbHasta);
             this.grpFiltroFecha.Controls.Add(this.label8);
@@ -1014,7 +1016,7 @@
             this.grpFiltroFecha.Controls.Add(this.label21);
             this.grpFiltroFecha.Location = new System.Drawing.Point(5, 23);
             this.grpFiltroFecha.Name = "grpFiltroFecha";
-            this.grpFiltroFecha.Size = new System.Drawing.Size(657, 50);
+            this.grpFiltroFecha.Size = new System.Drawing.Size(679, 50);
             this.grpFiltroFecha.TabIndex = 5;
             this.grpFiltroFecha.TabStop = false;
             this.grpFiltroFecha.Visible = false;
@@ -1022,7 +1024,7 @@
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(428, 18);
+            this.lblHasta.Location = new System.Drawing.Point(374, 22);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(38, 13);
             this.lblHasta.TabIndex = 110;
@@ -1031,7 +1033,7 @@
             // cmbHasta
             // 
             this.cmbHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.cmbHasta.Location = new System.Drawing.Point(469, 15);
+            this.cmbHasta.Location = new System.Drawing.Point(415, 19);
             this.cmbHasta.Name = "cmbHasta";
             this.cmbHasta.Size = new System.Drawing.Size(121, 20);
             this.cmbHasta.TabIndex = 109;
@@ -1040,7 +1042,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(260, 19);
+            this.label8.Location = new System.Drawing.Point(206, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 108;
@@ -1049,7 +1051,7 @@
             // cmbDesde
             // 
             this.cmbDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.cmbDesde.Location = new System.Drawing.Point(304, 16);
+            this.cmbDesde.Location = new System.Drawing.Point(250, 19);
             this.cmbDesde.Name = "cmbDesde";
             this.cmbDesde.Size = new System.Drawing.Size(121, 20);
             this.cmbDesde.TabIndex = 107;
@@ -1063,20 +1065,34 @@
             "Mes",
             "Año",
             "Desde/Hasta"});
-            this.cmbTipoPrincipal.Location = new System.Drawing.Point(133, 15);
+            this.cmbTipoPrincipal.Location = new System.Drawing.Point(79, 18);
             this.cmbTipoPrincipal.Name = "cmbTipoPrincipal";
             this.cmbTipoPrincipal.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoPrincipal.TabIndex = 106;
             this.cmbTipoPrincipal.Text = "Dia";
+            this.cmbTipoPrincipal.SelectedIndexChanged += new System.EventHandler(this.cmbTipoPrincipal_SelectedIndexChanged);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(67, 18);
+            this.label21.Location = new System.Drawing.Point(13, 21);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(63, 13);
             this.label21.TabIndex = 105;
             this.label21.Text = "Mostrar por:";
+            // 
+            // AplicarCambios
+            // 
+            this.AplicarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AplicarCambios.Image = ((System.Drawing.Image)(resources.GetObject("AplicarCambios.Image")));
+            this.AplicarCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AplicarCambios.Location = new System.Drawing.Point(565, 14);
+            this.AplicarCambios.Name = "AplicarCambios";
+            this.AplicarCambios.Size = new System.Drawing.Size(103, 28);
+            this.AplicarCambios.TabIndex = 125;
+            this.AplicarCambios.Text = "Aplicar";
+            this.AplicarCambios.UseVisualStyleBackColor = true;
+            this.AplicarCambios.Click += new System.EventHandler(this.AplicarCambios_Click);
             // 
             // Administrador
             // 
@@ -1094,8 +1110,8 @@
             this.Controls.Add(this.frmEdicion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.frmDatos);
             this.Controls.Add(this.grpFiltroFecha);
+            this.Controls.Add(this.frmDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -1228,6 +1244,7 @@
         private System.Windows.Forms.DateTimePicker cmbDesde;
         private System.Windows.Forms.ComboBox cmbTipoPrincipal;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button AplicarCambios;
     }
 }
 

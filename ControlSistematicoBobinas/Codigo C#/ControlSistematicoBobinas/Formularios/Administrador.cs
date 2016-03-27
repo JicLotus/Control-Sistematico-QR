@@ -49,7 +49,26 @@ namespace ControlSistematicoBobinas
             this.ajustarResolucion();
             rotuloBobina = new administradorRotuloBobina();
             remito = new administradorRemito();
+
+
+
         }
+
+        void completarFiltroFechaHistorialObservaciones()
+        {
+            int day = Convert.ToInt32(apariencia.getDateDay2());
+            int month = Convert.ToInt32(apariencia.getDateMonth2());
+            int year = Convert.ToInt32(apariencia.getDateYear2());
+            int day2 = Convert.ToInt32(apariencia.getHastaDay2());
+            int month2 = Convert.ToInt32(apariencia.getHastaMonth2());
+            int year2 = Convert.ToInt32(apariencia.getHastaYear2());
+            DateTime fechaDesde = new DateTime(year, month, day);
+            DateTime fechaHasta = new DateTime(year2, month2, day2);
+
+            cmbDesde.Value = fechaDesde;
+            cmbHasta.Value = fechaHasta;
+        }
+
 
         private void ajustarResolucion()
         {
@@ -145,11 +164,11 @@ namespace ControlSistematicoBobinas
                     consultador.getMaquinistas();
                     break;
                 case tipoCarga.OBSERVACIONESGENRALES:
-                    TotalHojas.Text = consultador.cantidadHojasObsGeneral().ToString();
+                    TotalHojas.Text = consultador.cantidadHojasObsGeneral(apariencia.getIndexTipoPrincipal2(), apariencia.getDateDay2(), apariencia.getDateMonth2(), apariencia.getDateYear2(), apariencia.getHastaDay2(), apariencia.getHastaMonth2(), apariencia.getHastaYear2()).ToString();
                     consultador.getObsGenerales();
                     break;
                 case tipoCarga.PHONESHISTORY:
-                    TotalHojas.Text = consultador.cantidadHojasHistorialCelular(apariencia.getIndexTipoPrincipal(), apariencia.getDateDay(), apariencia.getDateMonth(), apariencia.getDateYear(), apariencia.getHastaDay(), apariencia.getHastaMonth(), apariencia.getHastaYear()).ToString();
+                    TotalHojas.Text = consultador.cantidadHojasHistorialCelular(apariencia.getIndexTipoPrincipal2(), apariencia.getDateDay2(), apariencia.getDateMonth2(), apariencia.getDateYear2(), apariencia.getHastaDay2(), apariencia.getHastaMonth2(), apariencia.getHastaYear2()).ToString();
                     consultador.getHistorial();
                     break;
                 case tipoCarga.PRODUCTOS:
@@ -297,6 +316,7 @@ namespace ControlSistematicoBobinas
                     break;
                 case tipoCarga.OBSERVACIONESGENRALES:
                     this.establecerControlesObservacionesGenerales();
+                    
                     break;
                 case tipoCarga.PHONESHISTORY:
                     this.establecerControlesHistorialCelulares();
@@ -833,6 +853,7 @@ namespace ControlSistematicoBobinas
                 columna.ReadOnly = true;
             }
             dataGridView1.Sort(this.dataGridView1.Columns["Index"], ListSortDirection.Descending);
+            completarFiltroFechaHistorialObservaciones();
         }
 
         private void establecerControlesObservacionesGenerales()
@@ -846,6 +867,7 @@ namespace ControlSistematicoBobinas
                 columna.ReadOnly = true;
             }
             dataGridView1.Sort(this.dataGridView1.Columns["Index"], ListSortDirection.Descending);
+            completarFiltroFechaHistorialObservaciones();
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -987,59 +1009,19 @@ namespace ControlSistematicoBobinas
 
         }
 
-        /*
-        static byte[] Decompress(byte[] gzip)
+        private void cmbTipoPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Create a GZIP stream with decompression mode.
-            // ... Then create a buffer and write into while reading from the GZIP stream.
-            using (GZipStream stream = new GZipStream(new MemoryStream(gzip), CompressionMode.Decompress))
-            {
-                const int size = 4096;
-                byte[] buffer = new byte[size];
-                using (MemoryStream memory = new MemoryStream())
-                {
-                    int count = 0;
-                    do
-                    {
-                        count = stream.Read(buffer, 0, size);
-                        if (count > 0)
-                        {
-                            memory.Write(buffer, 0, count);
-                        }
-                    }
-                    while (count > 0);
-                    return memory.ToArray();
-                }
-            }
+
         }
 
-        public static byte[] Compress(byte[] fi)
+        private void AplicarCambios_Click(object sender, EventArgs e)
         {
-            using (MemoryStream outFile = new MemoryStream())
-            {
-                using (MemoryStream inFile = new MemoryStream(fi))
-                using (GZipStream Compress = new GZipStream(outFile, CompressionMode.Compress))
-                {
-                    inFile.CopyTo(Compress);
-                }
-                return outFile.ToArray();
-            }
+            apariencia.setFechaDesde2(cmbDesde.Value);
+            apariencia.setFechaHasta2(cmbHasta.Value);
+            apariencia.setTipoPrincipal2(cmbTipoPrincipal.SelectedIndex);
+            this.establecer_controles();
         }
 
-        static byte[] GetBytes(string str)
-        {
-            byte[] bytes = new byte[str.Length * sizeof(char)];
-            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-            return bytes;
-        }
-
-        static string GetString(byte[] bytes)
-        {
-            char[] chars = new char[bytes.Length / sizeof(char)];
-            System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
-            return new string(chars);
-        }
-        */
 
     }
 

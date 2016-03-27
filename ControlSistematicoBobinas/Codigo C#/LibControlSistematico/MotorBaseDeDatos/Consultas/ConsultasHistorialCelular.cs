@@ -62,7 +62,7 @@ namespace LibControlSistematico
                     break;
             }
 
-            return "Select count(*) from `"  + baseDeDatos +  "`.`historial_celular` limit 1";
+            return "Select count(*) from `"  + baseDeDatos +  "`.`historial_celular` " + clausula_where + " limit 1";
         }
 
         public string getPhonesHistory(int cantidad_registros)
@@ -78,7 +78,8 @@ namespace LibControlSistematico
                     hoja_inicial = 0;
                 }
             }
-            return "Select * from `"  + baseDeDatos +  "`.`historial_celular` " + clausula_where+ " limit " + hoja_inicial + "," + limite + ";";
+
+            return "Select * from `"  + baseDeDatos +  "`.`historial_celular` " + clausula_where + " limit " + hoja_inicial + "," + limite + ";";
         }
 
         public string accionPaginaHistorialCelular(int cantidad_registros, int contador_hoja)

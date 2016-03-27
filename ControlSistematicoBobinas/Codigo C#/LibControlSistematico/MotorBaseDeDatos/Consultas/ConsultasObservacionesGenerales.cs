@@ -12,6 +12,11 @@ namespace LibControlSistematico
         double registros_por_hoja;
         string baseDeDatos;
 
+        private string clausula_where = "";
+        private Fecha indexTipoAnio;
+        private string day, month, year;
+        private string day2, month2, year2;
+
         public ConsultasObservacionesGenerales(double reg_por_hoja,string baseDeDatosParam)
         {
             registros_por_hoja = reg_por_hoja;
@@ -46,7 +51,24 @@ namespace LibControlSistematico
 
         public string countObservacionesGenerales()
         {
-            return "Select count(*) from `"  + baseDeDatos +  "`.`observaciones_generales` limit 1";
+
+            switch (indexTipoAnio)
+            {
+                case Fecha.DIA:
+                    clausula_where = "where (day(Fecha)=" + day + " and month(Fecha)=" + month + " and year(Fecha)=" + year + ")";
+                    break;
+                case Fecha.MES:
+                    clausula_where = "where (month(Fecha)=" + month + " and year(Fecha)=" + year + ")";
+                    break;
+                case Fecha.AÑO:
+                    clausula_where = "where (year(Fecha)=" + year + ")";
+                    break;
+                case Fecha.DESDEHASTA:
+                    clausula_where = "where (Fecha BETWEEN '" + year + "/" + month + "/" + day + "' and '" + year2 + "/" + month2 + "/" + day2 + "'" + ")";
+                    break;
+            }
+
+            return "Select count(*) from `" + baseDeDatos + "`.`observaciones_generales` " + clausula_where + " limit 1";
         }
 
         public string getObservacionesGenerales(int cantidad_registros)
@@ -62,7 +84,18 @@ namespace LibControlSistematico
                     hoja_inicial = 0;
                 }
             }
-            return "Select * from `"  + baseDeDatos +  "`.`observaciones_generales` limit " + hoja_inicial + "," + limite + ";";
+            return "Select * from `" + baseDeDatos + "`.`observaciones_generales` " + clausula_where + " limit " + hoja_inicial + "," + limite + ";";
+        }
+
+        public void setIndicesFiltro(int indexTipoAnioParam, string dayParam, string monthParam, string yearParam, string dayParam2, string monthParam2, string yearParam2)
+        {
+            indexTipoAnio = (Fecha)indexTipoAnioParam;
+            day = dayParam;
+            month = monthParam;
+            year = yearParam;
+            day2 = dayParam2;
+            month2 = monthParam2;
+            year2 = yearParam2;
         }
 
         public string accionPaginaObsGenerales(int cantidad_registros, int contador_hoja)
@@ -78,7 +111,7 @@ namespace LibControlSistematico
                     hoja_inicial = 0;
                 }
             }
-            return ("Select * from observaciones_generales limit " + hoja_inicial + "," + limite + ";");
+            return ("Select * from observaciones_generales " + clausula_where + "  limit " + hoja_inicial + "," + limite + ";");
         }
 
         public string cantidadObservaciones()
