@@ -1022,6 +1022,11 @@ namespace ControlSistematicoBobinas
             this.establecer_controles();
         }
 
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            consultador.onemillion();
+        }
+
 
     }
 

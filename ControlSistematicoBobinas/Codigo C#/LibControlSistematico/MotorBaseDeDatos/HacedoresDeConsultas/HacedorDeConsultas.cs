@@ -460,21 +460,21 @@ namespace LibControlSistematico
 
         public void onemillion()
         {
-            string a = "01/10/2013";
+            string a = "01/04/2016";
 
             DateTime finBob = DateTime.Now;
             DateTime asd = Convert.ToDateTime(a, new CultureInfo("es-ES"));
             string r;
             Random random = new Random();
 
-            for (int i = 0; i < 200000; i++)
+            for (int i = 0; i < 1; i++)
             {
-                int cliente = random.Next(5); if (cliente == 0) cliente = 1;
-                int tipo = random.Next(4); if (tipo == 0) tipo = 1;
-                int maquinista = random.Next(3); if (maquinista == 0) maquinista = 1;
-                int estado = random.Next(5); if (estado == 0) estado = 1;
+                int cliente = 2;//random.Next(4); if (cliente == 0) cliente = 1;
+                int tipo = random.Next(3); if (tipo == 0) tipo = 1;
+                int maquinista = random.Next(2); if (maquinista == 0) maquinista = 1;
+                int estado = 6;//random.Next(4); if (estado == 0) estado = 1;
 
-                asd = asd.AddDays(1);
+                //asd = asd.AddDays(1);
                 r = asd.ToString("yyyy-MM-dd");
 
                 for (int j = 0; j < 48; j++)

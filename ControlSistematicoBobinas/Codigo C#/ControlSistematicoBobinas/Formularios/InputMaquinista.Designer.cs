@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputMaquinista));
             this.lblpregunta = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbMaquinista = new System.Windows.Forms.ComboBox();
@@ -40,7 +39,7 @@
             // 
             this.lblpregunta.AutoSize = true;
             this.lblpregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpregunta.Location = new System.Drawing.Point(105, 136);
+            this.lblpregunta.Location = new System.Drawing.Point(210, 136);
             this.lblpregunta.Name = "lblpregunta";
             this.lblpregunta.Size = new System.Drawing.Size(961, 73);
             this.lblpregunta.TabIndex = 1;
@@ -86,7 +85,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblpregunta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "InputMaquinista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

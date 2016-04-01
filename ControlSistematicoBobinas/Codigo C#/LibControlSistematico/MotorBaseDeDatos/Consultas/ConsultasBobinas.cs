@@ -225,7 +225,7 @@ namespace LibControlSistematico
 
         public string onemillion(string fecha, string cliente, string tipo, string maquinista, string estado, string finBob)
         {
-            return ("INSERT INTO  `"  + baseDeDatos +  "`.`reg_2014` (`Numero_Bobina` ,`estado_id` ,`producto_id` ,`cliente_id` ,`maquinista_id` ,`Peso` ,`Observacion` ,`Gramaje` ,`Espesor` ,`Fin_Bob` ,`Formato` ,`FECHA_FABRICACION` ,`celular`)VALUES (NULL ,  '" + estado + "',  '" + tipo + "',  '" + cliente + "',  '" + maquinista + "',  '123.12',  'asdasdagetyhj 2342 vgefg grh..mm',  '12',  '123',  '" + finBob + "',  '123',  '" + fecha + "', '213131');");
+            return ("INSERT INTO  `"  + baseDeDatos +  "`.`reg_2014` (`Numero_Bobina` ,`estado_id` ,`producto_id` ,`cliente_id` ,`maquinista_id` ,`Peso` ,`Observacion` ,`Gramaje` ,`Espesor` ,`Fin_Bob` ,`Formato` ,`FECHA_FABRICACION` ,`celular`)VALUES (NULL ,  '" + estado + "',  '" + tipo + "',  '" + cliente + "',  '" + maquinista + "',  '123.12',  '',  '12',  '123',  '" + finBob + "',  '123',  '" + fecha + "', '213131');");
         }
 
 
