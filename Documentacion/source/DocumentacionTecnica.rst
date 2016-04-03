@@ -33,13 +33,6 @@ El diagrama de cambios de estado de los formularios es el siguiente:
 
 
 ************************************
-Diagrama de clases
-************************************
-
-Desarrollar
-
-
-************************************
 Cliente
 ************************************
 
