@@ -56,7 +56,7 @@ copyright = u'2015, Jose Ignacio Castelli'
 author = u'Jose Ignacio Castelli'
 
 
-pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
+pdf_documents = [('index', u'rst2pdf', u'Documentacion técnica', u'Jose Ignacio Castelli'),]
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
